@@ -1,24 +1,20 @@
 # Traivan Porfolio 
+> This is Ruby on Rails 5 application that allows user to create their own portfolio
+### Features
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Real time chat engine for comments
+- Blog 
+- Portfoilio
+- Drag and drop interface
 
-Things you may want to cover:
+### Code Example
 
-* Ruby version
+```ruby
+def my_great_method
+  puts "here it is"
+end
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```Javascript
+alert('Hi There');
+```
