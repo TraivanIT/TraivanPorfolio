@@ -1,10 +1,9 @@
 <h1>Portfolio Items</h1>
 <p><%= link_to 'new portfolio_item', new_portfolio_path%></p>
 <% @portfolio_items.each do |portfolio_item|%>
-  <p><%= portfolio_item.title%></p>
+  <p><b><%= link_to portfolio_item.title, portfolio_path(portfolio_item)%></b></p>
   <p><%= portfolio_item.subtitle%></p>
   <p><%= portfolio_item.body%></p>
- <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
- <%= link_to 'edit' , edit_portfolio_path(portfolio_item.id)%>
- <a href="/portfolios/<%= portfolio_item.id%>/edit">Eidt two</a>
-<% end %>
+  <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
+  <%= link_to 'edit' , edit_portfolio_path(portfolio_item)%>
+ <% end %>
