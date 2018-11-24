@@ -1,3 +1,7 @@
 <h1>Home Page</h1>
-<h2>Blogs </h2>
+<h2>Blogs <%= Blog.count%></h2>
 <%= @posts.inspect%>
+<hr>
+
+<h2>Skill <%= Skill.count%></h2>
+<%= @skills.inspect%>
