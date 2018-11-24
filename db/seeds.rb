@@ -26,8 +26,8 @@ puts "5 skill created"
     title: "Portfolio title #{portfolio_items}",
     subtitle: "My subtitle #{portfolio_items}",
     body: "Disrupt keytar everyday carry, raclette semiotics deep v fashion axe. Cray helvetica keffiyeh trust fund, banh mi four loko lomo beard cardigan roof party. Swag distillery man braid, hammock enamel pin hexagon fanny pack selfies taxidermy edison bulb wayfarers. Asymmetrical palo santo iceland, glossier chambray locavore leggings kickstarter tilde fingerstache fam. Post-ironic quinoa pinterest, shabby chic mlkshk hoodie cornhole snackwave raclette tumeric ",
-    main_image: "https://via.placeholder.com/350x200",
-    thumb_image: "https://via.placeholder.com/600x400",
+    thumb_image: "https://via.placeholder.com/350x200",
+    main_image: "https://via.placeholder.com/600x400",
     )
 end
 puts "9 portfolio_items created"
