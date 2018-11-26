@@ -2,6 +2,11 @@ class Portfolio < ApplicationRecord
   include Placeholder #to use method in placeholder module
 
   has_many :technologies #association between technology model(Table)
+  #accepts_nested_attributes_for is the nested form to create technology in portfolio form 
+  #reject_if this is the validation
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda {|attrs| attrs['name'].blank?}
+
 
   validates_presence_of :title, :body, :main_image, :thumb_image
 
