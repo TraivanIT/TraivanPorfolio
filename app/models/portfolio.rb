@@ -1,6 +1,10 @@
 class Portfolio < ApplicationRecord
-  include Placeholder #to user method in placeholder
+  include Placeholder #to use method in placeholder module
+
+  has_many :technologies #association between technology model(Table)
+
   validates_presence_of :title, :body, :main_image, :thumb_image
+
   def self.ruby
     where(subtitle: 'Ruby on Rails')
   end
