@@ -9,3 +9,10 @@
 
 <h2>Portfolio <%= Portfolio.count%></h2>
 <%= @portfolios.inspect%>
+
+  <% if user_signed_in?%>
+    <h4> <%= User.first.email%> </h4>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <h4><%= link_to 'Please login', new_user_session_path%></h4>
+  <% end %>
