@@ -1,11 +1,24 @@
 <h1>Home Page</h1>
 <h2>Blogs <%= Blog.count%></h2>
-<%= @posts.inspect%>
+  <ol>
+  <% @posts.each do |post|%>
+    <li><%= post.title%></li>
+  <%end%>
+  </ol>
 <hr>
 
 <h2>Skill <%= Skill.count%></h2>
-<%= @skills.inspect%>
+<ol>
+  <% @skills.each do |skill|%>
+    <li><%= skill.title%></li>
+  <% end %>
+</ol>
 <hr>
 
 <h2>Portfolio <%= Portfolio.count%></h2>
-<%= @portfolios.inspect%>
+<ol>
+  <%@portfolios.each do |portfolio|%>
+    <li><%= portfolio.title%></li>
+  <% end %>
+</ol>
+ 
