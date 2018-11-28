@@ -11,10 +11,10 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <h1>Hi, <%= current_user.first_name %> </h1>
 
-    <% if current_user %>
+    <% if current_user.is_a?(User) %>
       <p> 
-        User: <%= current_user.first_name if current_user%> 
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
       </p>
     <% else %>
