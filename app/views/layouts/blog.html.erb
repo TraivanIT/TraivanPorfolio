@@ -12,7 +12,7 @@
   <body>  
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'shared/page_nav'%>
+    <%= render 'shared/page_nav' , location: 'blog'%>
 
     <h1>Hi, <%= current_user.first_name %> </h1>
     <% if current_user.is_a?(User) %>
