@@ -1,6 +1,7 @@
 <h1>Show Portfolio Item</h1>
 <%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
 <p><b>Title: </b><%= @portfolio_item.title%></p>
+<small><%= time_ago @portfolio_item.created_at%></small>
 <p><b>Subtitle: </b><%= @portfolio_item.subtitle%></p>
 <p><b>Body: </b><%= @portfolio_item.body%></p>
 <p><b>Technology:</b></p>
