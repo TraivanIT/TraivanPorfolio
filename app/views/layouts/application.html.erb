@@ -2,6 +2,8 @@
 <html>
   <head>
     <title><%= @page_title%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <meta name="keywords" content= "<%= @seo_keywords %>" />
     <%= csp_meta_tag %>
@@ -10,14 +12,36 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'shared/page_nav' , location: 'app'%>
-    <h1>Hi, <%= current_user.first_name %> </h1>
-    <%= login_helper %>
-    <%= yield %>
-    <%= copyright_generator %>
-    <br>
-    <%= source_helper("application") %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render 'shared/app_nav'%>
+          
+
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <%= yield %>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p><%= copyright_generator %></p>
+            </div>
+          </div>
+
+
+          <br>
+          <%= source_helper("application") %>
+          
+        </div>
+      </div>
+    </div>
+   
   </body>
 </html>
+
+
+
+
+
+
