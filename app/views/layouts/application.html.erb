@@ -16,6 +16,7 @@
     <h1>Hi, <%= current_user.first_name %> </h1>
     <%= login_helper %>
     <%= yield %>
+    <%= copyright_generator %>
     <br>
     <%= source_helper("application") %>
   </body>

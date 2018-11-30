@@ -21,4 +21,8 @@ module ApplicationHelper
     end
   end
 
+  def copyright_generator
+    TraivanViewTool::Renderer.copyright 'Traivan Von', 'All right reserved'
+  end
+
 end
