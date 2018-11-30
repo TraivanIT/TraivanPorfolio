@@ -2,6 +2,8 @@
 <html>
   <head>
     <title><%= @page_title%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <meta name="keywords" content= "<%= @seo_keywords %>" />
     <%= csp_meta_tag %>
@@ -9,25 +11,31 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>  
+  <body>
+    <%= render 'shared/blog_nav'%>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'shared/page_nav' , location: 'blog'%>
+    
+    <div class="blog-header">
+      <div class="container">
+        <h1 class="blog-title">The Bootstrap Blog Hi, <%= current_user.first_name %> </h1>
+        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+      </div>
+    </div>
+    
 
-    <h1>Hi, <%= current_user.first_name %> </h1>
-    <% if current_user.is_a?(User) %>
-      <p> 
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      </p>
-    <% else %>
-      <p>
-        <%= link_to 'Login', new_user_session_path%>
-        <%= link_to 'Register', new_user_registration_path%>
-      </p>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <%= yield %>
+          <br>
+          <%= source_helper("blog") %>
+        </div>
+        <%= render 'shared/blog_aside_bar'%>
+      </div><!--end of row-->
+    </div><!--end of container class-->
 
-    <%= yield %>
-    <br>
-    <%= source_helper("blog") %>
+    <%= render 'shared/blog_footer'%>
   </body>
 </html>

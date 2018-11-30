@@ -60,6 +60,8 @@ gem 'devise', '~> 4.5'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
 gem 'petergate', '~> 2.0', '>= 2.0.1' 
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap4-kaminari-views'
 
 
 gem 'traivan_veiw_tool' , git: 'https://github.com/TraivanIT/traivan_view_tool'

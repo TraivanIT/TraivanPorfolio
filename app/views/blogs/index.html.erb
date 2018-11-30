@@ -1,23 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Created</th>
-      <th>Body</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @blogs%>
-  </tbody>
-</table>
-
+   <%= render @blogs%>
+   <%= paginate @blogs , theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm"%>
+   
 <br>
-
-
 <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>

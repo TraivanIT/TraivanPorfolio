@@ -1,9 +1,14 @@
- <tr>
-    <td><%= blog.title %></td>
-    <td><%= time_ago blog.created_at %></td>
-    <td><%= truncate(blog.body, length: 100, seperator: '') %></td>
-    <td><%= link_to blog.status , toggle_status_blog_path(blog) %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<%= link_to blog_path(blog)do %>
+<div class="card post-wrapper">
+  <div class="card-body">
+    <h4><%=blog.title%></h4>
+    <small><em><%= blog.created_at.strftime("%d %b %Y")%> by: <%= User.first.name%></em></small> 
+  <p ><%= truncate(blog.body, length: 70, separator: '')%></p>
+  
+  </div>
+</div>
+<div class="spacer"> </div>  
+<% end %>
+
+ 
+  

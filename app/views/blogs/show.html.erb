@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @blog.title %>
+    </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
+    <p>
+      <strong>Body:</strong>
+      <%= @blog.body %>
+    </p>
+    <% if logged_in?(:site_admin)%>
+      <%= link_to 'Edit', edit_blog_path(@blog) %> |
+      <%= link_to 'Back', blogs_path %>
+    <% end %>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+    
+  </div>
+</div>
+
