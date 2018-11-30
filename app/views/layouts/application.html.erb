@@ -22,16 +22,9 @@
           <p class="alert"><%= alert %></p>
 
           <%= yield %>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p><%= copyright_generator %></p>
-            </div>
-          </div>
-
-
           <br>
           <%= source_helper("application") %>
+          <%= render 'shared/app_footer'%>
           
         </div>
       </div>
