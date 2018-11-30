@@ -2,6 +2,9 @@ module ApplicationHelper
   def time_ago time
     "#{time_ago_in_words(time)} ago"
   end
+  def distance_time time
+    "#{distance_of_time_in_words(time)} ago"
+  end
 
   def login_helper
     if current_user.is_a?(User) 

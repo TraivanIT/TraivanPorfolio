@@ -1,5 +1,6 @@
  <tr>
     <td><%= blog.title %></td>
+    <td><%= time_ago blog.created_at %></td>
     <td><%= truncate(blog.body, length: 100, seperator: '') %></td>
     <td><%= link_to blog.status , toggle_status_blog_path(blog) %></td>
     <td><%= link_to 'Show', blog %></td>
