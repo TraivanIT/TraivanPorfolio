@@ -1,0 +1,29 @@
+<h1>Dashboard</h1>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Created</th>
+      <th>Status</th>
+      <th>Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <%@blogs.each do |blog|%>
+      <tr>
+        <td><%= blog.id%></td>
+        <td><%= blog.title%></td>
+        <td><%= time_ago blog.created_at%></td>
+        <td><%= blog.status%></td>
+        <td>
+          <%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-primary btn-sm"%>
+          <%= link_to 'show', blog_path(blog), class: "btn btn-primary btn-sm"%>
+          <%= link_to 'edit', edit_blog_path(blog), class: "btn btn-primary btn-sm"%>
+          <%= link_to 'delete', blog_path(blog), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary btn-sm"%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

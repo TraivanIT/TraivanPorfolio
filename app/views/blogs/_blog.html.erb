@@ -1,14 +1,16 @@
 <%= link_to blog_path(blog)do %>
   <div class="card post-wrapper">
-    <div class="card-body">
+    <div class="card-block">
       <h4><%=blog.title%></h4>
       <small><em>Publish: <%= distance_of_time_in_words(blog.created_at, Time.now) %>ago by: <%= User.first.name%></em></small> 
       <p ><%= truncate(blog.body, length: 300, separator: '')%></p>
-      <div class="text-right">
-        <%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-outline-primary btn-sm"%>
-        <%= link_to'edit', edit_blog_path(blog), class: "btn btn-outline-primary btn-sm"%>
-        <%= link_to'delete', blog_path(blog), method: :delete, data: {confirm: "are you sure? "} , class: "btn btn-outline-primary btn-sm"%>
-      </div>
+      <%if logged_in?(:site_admin) %>
+        <div class="text-right">
+          <%= link_to blog.status, toggle_status_blog_path(blog), class: "btn btn-outline-primary btn-sm"%>
+          <%= link_to'edit', edit_blog_path(blog), class: "btn btn-outline-primary btn-sm"%>
+          <%= link_to'delete', blog_path(blog), method: :delete, data: {confirm: "are you sure? "} , class: "btn btn-outline-primary btn-sm"%>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="spacer"></div>  
