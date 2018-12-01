@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 /*
  * Globals
  */
@@ -183,6 +184,9 @@ a:hover{
 .post-wrapper a:hover {
    color: #595a5b;
   text-decoration: none;
+}
+.social-link a{
+  font-size: 2rem;
 }
 
 
