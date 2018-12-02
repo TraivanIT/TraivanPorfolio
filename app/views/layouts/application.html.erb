@@ -16,12 +16,18 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-          <%= render 'shared/app_nav'%>
           
+          <%= video_tag(
+            'video-bg.mp4',
+            id: 'background',
+            autoplay: true,
+            loop: true,
+            muted: true
 
+          )%>
+          <%= render 'shared/app_nav'%>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-
           <%= yield %>
           <br>
           <%= source_helper("application") %>
