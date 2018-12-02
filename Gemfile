@@ -63,6 +63,7 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap4-kaminari-views'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 gem 'traivan_veiw_tool' , git: 'https://github.com/TraivanIT/traivan_view_tool'
 
