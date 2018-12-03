@@ -1,5 +1,4 @@
 class Portfolio < ApplicationRecord
-  include Placeholder #to use method in placeholder module
 
   has_many :technologies #association between technology model(Table)
   #accepts_nested_attributes_for is the nested form to create technology in portfolio form 
@@ -22,10 +21,5 @@ class Portfolio < ApplicationRecord
   end
   scope :angular, -> { where(subtitle: 'Angular')}
 
-  after_initialize :set_defaults
-  def set_defaults
-    self.thumb_image ||= Placeholder.image_generator(height: '350' ,width: '200')
-    self.main_image ||= Placeholder.image_generator(height: '600' ,width: '400')
-  end
 
 end
