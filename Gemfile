@@ -71,4 +71,5 @@ gem 'dotenv-rails', '~> 2.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.2'
+
 gem 'traivan_veiw_tool' , git: 'https://github.com/TraivanIT/traivan_view_tool'
