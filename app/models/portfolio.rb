@@ -1,9 +1,9 @@
 class Portfolio < ApplicationRecord
 
-  has_many :technologies #association between technology model(Table)
+  has_many :technologies , dependent: :destroy #association between technology model(Table)
   #accepts_nested_attributes_for is the nested form to create technology in portfolio form 
   #reject_if this is the validation
-  accepts_nested_attributes_for :technologies,
+  accepts_nested_attributes_for :technologies, allow_destroy: true,
                                 reject_if: lambda {|attrs| attrs['name'].blank?}
 
 
