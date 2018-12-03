@@ -20,9 +20,11 @@
     
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">The Bootstrap Blog Hi, <%= current_user.first_name %> </h1>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-        
+        <h1 class="blog-title">Welcome to Traivan Blogs Hi, <%= current_user.first_name %> </h1>
+        <p class="lead blog-description">You see many of best blogging here </p>
+        <%if logged_in?(:site_admin)%>
+          <%= link_to 'New Blog', new_blog_path%>
+        <% end %>
       </div>
     </div>
     
@@ -39,6 +41,6 @@
     </div><!--end of container class-->
 
     <%= render 'shared/blog_footer'%>
-    <%= render 'shared/alert'%>
+    <%= alerts %>
   </body>
 </html>
