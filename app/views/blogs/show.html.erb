@@ -1,7 +1,10 @@
 <div class="row">
   <div class="col-md-12">
     <p id="notice"><%= notice %></p>
-
+    <% if logged_in?(:site_admin)%>
+      <%= link_to 'Edit', edit_blog_path(@blog) %> |
+      <%= link_to 'Back', blogs_path %>
+    <% end %>
     <p>
       <strong>Title:</strong>
       <%= @blog.title %>
@@ -11,12 +14,20 @@
       <strong>Body:</strong>
       <%= @blog.body %>
     </p>
-    <% if logged_in?(:site_admin)%>
-      <%= link_to 'Edit', edit_blog_path(@blog) %> |
-      <%= link_to 'Back', blogs_path %>
-    <% end %>
 
-    
+
+    <% unless  current_user.is_a?(GuestUser) %>
+      <%= form_for @comment , url: '#'  do |f|%>
+        <div class="form-group">
+          <%= f.label :content%>
+          <%= f.text_area :content , class: "form-control", rows: 3%>
+        </div>
+        <%= f.submit 'Post Comment', class: "btn btn-primary btn-sm"%>
+      <% end %>
+    <%end%>
+
+    <%= render @blog.comments %>
+
   </div>
 </div>
 
