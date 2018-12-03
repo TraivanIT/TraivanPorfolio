@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag @portfolio_item.main_image if !@portfolio_item.main_image.nil?%>
+      <%= image_tag @portfolio_item.main_image.url , width: '100%'%>
     </div>
     <div class="col-md-5">
       <h1><%= @portfolio_item.title%></h1>
@@ -9,6 +9,7 @@
       <hr>
       <em><%= @portfolio_item.subtitle%></em>
       <p><%= @portfolio_item.body%></p>
+      <%= link_to 'edit', edit_portfolio_path(@portfolio_item)%>
       <%if @portfolio_item.technologies.exists? %>
         <% @portfolio_item.technologies.each do |t|%>
          <p><em><%= t.name%></em></p>
@@ -16,6 +17,7 @@
       <% else %>
         <p>There are no technology in used</p>
       <% end %>
+
       
     </div>
   </div>

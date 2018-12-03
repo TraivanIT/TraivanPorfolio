@@ -9,6 +9,9 @@ class Portfolio < ApplicationRecord
 
 
   validates_presence_of :title, :body, :main_image, :thumb_image
+  #Carwave specail method to implement image uploader
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
 
   def self.ruby
     where(subtitle: 'Ruby on Rails')
