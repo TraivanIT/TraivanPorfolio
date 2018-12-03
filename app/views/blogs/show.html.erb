@@ -15,19 +15,11 @@
       <%= @blog.body %>
     </p>
 
+    <%= render 'comments/comment_form' %>
 
-    <% unless  current_user.is_a?(GuestUser) %>
-      <%= form_for @comment , url: '#'  do |f|%>
-        <div class="form-group">
-          <%= f.label :content%>
-          <%= f.text_area :content , class: "form-control", rows: 3%>
-        </div>
-        <%= f.submit 'Post Comment', class: "btn btn-primary btn-sm"%>
-      <% end %>
-    <%end%>
-
-    <%= render @blog.comments %>
-
+    <div id="comments" data-blog-id="<%= @blog.id %>">
+      <%= render @blog.comments %>
+    </div>
   </div>
 </div>
 
