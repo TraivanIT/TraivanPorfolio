@@ -20,8 +20,8 @@
     
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">Welcome to Traivan Blogs Hi, <%= current_user.first_name %> </h1>
-        <p class="lead blog-description">You see many of best blogging here </p>
+        <h1>Welcome to Traivan Blogs Hi, <%= current_user.first_name %> </h1>
+        <p>You see many of best blogging here </p>
         <%if logged_in?(:site_admin)%>
           <%= link_to 'New Blog', new_blog_path%>
         <% end %>
