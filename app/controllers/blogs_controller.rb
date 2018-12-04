@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_sitebar_topics, except: [:update, :create ,:destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update ]}, site_admin: :all
 
@@ -98,5 +99,10 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body, :topic_id)
+    end
+
+
+    def set_sitebar_topics
+      @side_bar_topics = Topic.only_topic_that_have_blogs
     end
 end

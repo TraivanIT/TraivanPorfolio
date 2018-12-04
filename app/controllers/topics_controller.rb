@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :set_sitebar_topics
   layout 'blog'
   def index
     @topics = Topic.all
@@ -13,4 +14,11 @@ class TopicsController < ApplicationController
       @blogs = @topic.blogs.published.all.order(id: :desc).page(params[:page]).per(5)
     end
   end
+
+  private
+
+  def set_sitebar_topics
+    @side_bar_topics = Topic.only_topic_that_have_blogs
+  end
+
 end
