@@ -14,31 +14,30 @@
 
   <body>
     <%= render 'shared/blog_nav'%>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">Welcome to Traivan Blogs Hi, <%= current_user.first_name %> </h1>
-        <p class="lead blog-description">You see many of best blogging here </p>
+        <h1>Welcome to Traivan Blogs Hi, <%= current_user.first_name %> </h1>
+        <p>You see many of best blogging here </p>
         <%if logged_in?(:site_admin)%>
           <%= link_to 'New Blog', new_blog_path%>
         <% end %>
       </div>
     </div>
-    
 
     <div class="container">
       <div class="row">
         <div class="col-sm-8 blog-main">
+
           <%= yield %>
-          <br>
-          <%= source_helper("blog") %>
-        </div>
+
+          
+        </div><!--end of col-md-8 -->
         
         <div class="col-sm-3 offset-sm-1 blog-sidebar">
+
           <%= render 'shared/blog_aside_bar'%>
+          
         </div><!--end of aside bar-->
       </div><!--end of row-->
     </div><!--end of container class-->

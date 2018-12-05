@@ -46,11 +46,5 @@ end
     main_image: "https://via.placeholder.com/600x400",
     )
 end
-
 puts "9 portfolio_items created"
-
-
-
-
-
 

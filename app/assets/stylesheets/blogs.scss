@@ -4,6 +4,9 @@
 /*
  * Globals
  */
+  * {
+  font-family: 'Open Sans', sans-serif;
+ }
 
 @media (min-width: 48em) {
   html {
@@ -189,5 +192,10 @@ a:hover{
 .social-link a{
   font-size: 2rem;
 }
-
+.comment-card{
+  margin-top: 10px;
+}
+.alert {
+  
+}
 
