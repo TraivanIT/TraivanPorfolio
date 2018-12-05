@@ -72,5 +72,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.2'
 gem 'redis', '~> 3.3', '>= 3.3.3'
+gem 'redcarpet', '~> 3.4'
+gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 gem 'traivan_veiw_tool' , git: 'https://github.com/TraivanIT/traivan_view_tool'
