@@ -4,6 +4,9 @@
 /*
  * Globals
  */
+ * {
+  font-family: 'Open Sans', sans-serif;
+ }
 
 /* Links */
 a,
@@ -21,7 +24,14 @@ a:hover {
   background-color: #fff;
   border: .05rem solid #fff;
 }
-
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Roboto Slab', serif;
+}
 
 /*
  * Base structure
@@ -192,6 +202,10 @@ body {
   color: white;
 }
 
+.skill{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 
 

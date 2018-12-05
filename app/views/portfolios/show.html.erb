@@ -1,11 +1,19 @@
+<br>
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-7">
+
       <% if logged_in?(:site_admin)%>
-      <%= link_to 'Back', portfolios_path(@portfolio_item)%>
-      <%= link_to 'Edit', edit_portfolio_path(@portfolio_item)%>
-      <%= link_to 'Delete', portfolio_path(@portfolio_item), method: :delete, data: {confirm: 'are you sure?'}%>
-      <hr>
+        <nav class="breadcrumb">
+          <%= link_to 'Home', portfolios_path(@portfolio_item) , class: "breadcrumb-item" %>
+          <span class="breadcrumb-item active"><%=  @portfolio_item.title %></span>
+          <span class="pull-right">
+            <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)%>
+            <%= link_to fa_icon('trash'), portfolio_path(@portfolio_item), method: :delete, data: {confirm: 'Are you sure ?'} if logged_in?(:site_admin)%>
+          </span>
+        </nav>
       <% end %>
       <%= image_tag @portfolio_item.main_image.url , width: '100%'%>
     </div>
